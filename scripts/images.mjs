@@ -10,14 +10,13 @@ const out = path.join(root, 'public/img')
 const photos = [
   { id: 18470969, name: 'mini-flat', ratio: 1, widths: [200, 400] },
   { id: 31435403, name: 'mini-windows', ratio: 1, widths: [200, 400], position: 'right' },
-  { id: 4401538, name: 'mini-sofa', ratio: 1, widths: [200, 400], position: 'left' },
+  { id: 10567271, name: 'mini-office', ratio: 1, widths: [200, 400] },
   { id: 10568359, name: 'strip', ratio: 4.2, widths: [640, 1100], position: 'attention' },
   { id: 19827227, name: 'svc-flat', ratio: 0.8, widths: [420, 760] },
   { id: 9462314, name: 'svc-general', ratio: 0.8, widths: [420, 760] },
-  { id: 5691510, name: 'svc-renovation', ratio: 0.8, widths: [420, 760], position: 'left' },
-  { id: 10567271, name: 'svc-office', ratio: 1, widths: [240, 480] },
-  { id: 4401535, name: 'svc-upholstery', ratio: 1, widths: [240, 480], position: 'right' },
-  { id: 4239147, name: 'svc-windows', ratio: 1, widths: [240, 480] },
+  { id: 5691510, name: 'svc-renovation', ratio: 0.8, widths: [420, 760], position: 'right' },
+  { id: 10567271, name: 'svc-office', ratio: 1.25, widths: [480, 860] },
+  { id: 4239147, name: 'svc-windows', ratio: 1.25, widths: [480, 860] },
   { id: 7193356, name: 'rest', ratio: 0.82, widths: [480, 860], position: 'bottom' },
 ]
 

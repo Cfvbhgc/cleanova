@@ -1,6 +1,6 @@
 const BASE = import.meta.env.BASE_URL
 
-export const imgUrl = (name: string, w: number, ext = 'webp') => `${BASE}img/${name}-${w}.${ext}`
+const imgUrl = (name: string, w: number, ext = 'webp') => `${BASE}img/${name}-${w}.${ext}`
 
 type Props = {
   name: string
