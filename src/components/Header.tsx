@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, m } from 'motion/react'
 import { ListIcon, PhoneIcon, XIcon } from '@phosphor-icons/react'
-import { company, nav } from '../content'
+import { company, nav as allNav, reviews } from '../content'
+
+const nav = reviews.length ? allNav : allNav.filter((item) => item.href !== '#otzyvy')
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (

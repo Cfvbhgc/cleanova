@@ -1,6 +1,16 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
+import { Advantages } from './components/Advantages'
+import { Contacts } from './components/Contacts'
+import { Faq } from './components/Faq'
+import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { LeadForm } from './components/LeadForm'
+import { MobileCta } from './components/MobileCta'
+import { Rest } from './components/Rest'
+import { Reviews } from './components/Reviews'
+import { Services } from './components/Services'
+import { Steps } from './components/Steps'
 
 export default function App() {
   return (
@@ -8,14 +18,24 @@ export default function App() {
       <MotionConfig reducedMotion="user">
         <a
           href="#main"
-          className="pill fixed top-3 left-3 z-[60] -translate-y-24 bg-bark text-cream focus:translate-y-0"
+          className="pill sr-only fixed top-3 left-3 z-[60] bg-bark text-cream focus:not-sr-only"
         >
           К содержанию
         </a>
         <Header />
         <main id="main">
           <Hero />
+          <Services />
+          <Rest />
+          <Advantages />
+          <Steps />
+          <Reviews />
+          <Faq />
+          <LeadForm />
+          <Contacts />
         </main>
+        <Footer />
+        <MobileCta />
       </MotionConfig>
     </LazyMotion>
   )

@@ -1,9 +1,7 @@
 import { ArrowRightIcon } from '@phosphor-icons/react'
-import { heroCards } from '../content'
-import { pickService } from '../lib/pick'
+import { hero, services } from '../content'
+import { orderService } from '../lib/order'
 import { Picture } from './Picture'
-
-const WORD = 'чисто'
 
 export function Hero() {
   return (
@@ -26,7 +24,7 @@ export function Hero() {
             className="pointer-events-none absolute inset-x-0 top-0 flex justify-center select-none sm:top-[4%] lg:top-[24%]"
           >
             <span className="relative font-display text-[clamp(4.6rem,22.5vw,10.75rem)] leading-[0.9] font-[900] tracking-[-0.055em] text-paper">
-              {WORD.split('').map((ch, i) => (
+              {hero.word.split('').map((ch, i) => (
                 <span key={i} className="anim-rise inline-block" style={{ animationDelay: `${120 + i * 60}ms` }}>
                   {ch}
                 </span>
@@ -35,23 +33,24 @@ export function Hero() {
                 className="anim-rise absolute right-[0.06em] -bottom-[0.32em] font-sans text-[0.22em] font-light tracking-normal text-paper"
                 style={{ animationDelay: '520ms' }}
               >
-                клининг
+                {hero.caption}
               </span>
             </span>
           </p>
         </div>
 
-        <aside aria-label="Популярные услуги" className="mt-6 lg:mt-4">
+        <aside aria-label="Заказать уборку" className="mt-6 lg:mt-4">
           <ul className="grid grid-cols-3 gap-2.5 sm:gap-4 lg:grid-cols-1">
-            {heroCards.map((card, i) => (
-              <li key={card.title} className="anim-rise" style={{ animationDelay: `${450 + i * 80}ms` }}>
+            {hero.cards.map((card, i) => (
+              <li key={card.service} className="anim-rise" style={{ animationDelay: `${450 + i * 80}ms` }}>
                 <button
                   type="button"
-                  onClick={() => pickService(card.target)}
+                  onClick={() => orderService(card.service)}
+                  aria-label={`Заказать: ${card.title.toLowerCase()}, ${services.find((s) => s.id === card.service)!.price}`}
                   className="group relative block w-full cursor-pointer rounded-[22px] bg-paper p-1.5 text-left shadow-[0_10px_30px_-18px_oklch(0.3_0.05_120/0.6)] transition-transform duration-200 ease-out active:scale-[0.97]"
                 >
                   <span className="absolute top-2.5 left-1/2 z-10 -translate-x-1/2 rounded-full bg-bark px-2 py-0.5 text-[10px] whitespace-nowrap text-cream sm:text-[11px]">
-                    {card.price}
+                    {services.find((s) => s.id === card.service)!.price}
                   </span>
                   <Picture
                     name={card.image}
@@ -74,9 +73,10 @@ export function Hero() {
           className="anim-rise mt-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between lg:col-span-2 lg:mt-0 lg:justify-end lg:gap-10"
           style={{ animationDelay: '650ms' }}
         >
-          <h1 className="max-w-[22rem] text-[17px] leading-snug text-bark sm:text-base lg:text-right">
-            Уборка квартир, офисов и химчистка мебели в Москве. Приедем уже завтра.
-          </h1>
+          <div className="max-w-[24rem] lg:text-right">
+            <h1 className="text-[17px] leading-snug font-semibold text-bark">{hero.title}</h1>
+            <p className="mt-1 text-[16px] leading-snug text-bark">{hero.subtitle}</p>
+          </div>
           <a href="#zayavka" className="pill min-h-12 bg-cocoa px-6 text-cream hover:bg-bark">
             Оставить заявку
             <ArrowRightIcon size={18} weight="bold" />
