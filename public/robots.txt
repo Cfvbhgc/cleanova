@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cfvbhgc.github.io/cleanova/sitemap.xml
