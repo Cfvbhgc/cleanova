@@ -5,7 +5,7 @@ export function Marquee({ tone, reverse = false }: { tone: 'dark' | 'light'; rev
   return (
     <div
       aria-hidden
-      className={`overflow-hidden py-5 select-none ${tone === 'dark' ? 'bg-bark text-[oklch(0.52_0.008_95)]' : 'bg-cream text-sage-deep'}`}
+      className={`overflow-hidden py-5 select-none ${tone === 'dark' ? 'bg-bark text-[oklch(0.7_0.01_95)]' : 'bg-cream text-sage-deep'}`}
     >
       <div
         className="marquee-track flex w-max text-[clamp(1.5rem,3.6vw,2.6rem)] font-semibold whitespace-nowrap uppercase"

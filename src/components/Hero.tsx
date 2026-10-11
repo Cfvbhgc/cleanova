@@ -46,9 +46,9 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={() => orderService(card.service)}
-                  aria-label={`Заказать: ${card.title.toLowerCase()}, ${services.find((s) => s.id === card.service)!.price}`}
                   className="group relative block w-full cursor-pointer rounded-[22px] bg-paper p-1.5 text-left shadow-[0_10px_30px_-18px_oklch(0.3_0.05_120/0.6)] transition-transform duration-200 ease-out active:scale-[0.97]"
                 >
+                  <span className="sr-only">Заказать: </span>
                   <span className="absolute top-2.5 left-1/2 z-10 -translate-x-1/2 rounded-full bg-bark px-2 py-0.5 text-[10px] whitespace-nowrap text-cream sm:text-[11px]">
                     {services.find((s) => s.id === card.service)!.price}
                   </span>

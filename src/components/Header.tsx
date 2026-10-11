@@ -7,7 +7,7 @@ const nav = reviews.length ? allNav : allNav.filter((item) => item.href !== '#ot
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <a href="#top" className="flex min-h-11 items-center gap-2.5" aria-label="Cleanova, на главную">
+    <a href="#top" className="flex min-h-11 items-center gap-2.5">
       <span
         className={`display grid size-11 place-items-center rounded-[14px] text-xl ${
           light ? 'bg-cream text-bark' : 'bg-moss text-cream'
