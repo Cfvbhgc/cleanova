@@ -1,0 +1,11 @@
+name = "cleanova-leads"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# chat or group id that receives leads, e.g. -1001234567890
+TELEGRAM_CHAT_ID = ""
+# site origins allowed to post, comma separated
+ALLOWED_ORIGIN = "https://cfvbhgc.github.io,http://localhost:5173"
+
+# the bot token is a secret: npx wrangler secret put TELEGRAM_BOT_TOKEN
