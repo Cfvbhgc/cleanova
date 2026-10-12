@@ -1,5 +1,5 @@
 // Builds responsive webp/avif files in public/img.
-// Sources live in .cache: photos/<pexels id>.jpg and cutouts/<pexels id>.png (transparent background).
+// Sources live in .cache: photos/<pexels id or file>.jpg and cutouts/<pexels id>.png (transparent background).
 import { mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
@@ -19,6 +19,18 @@ const photos = [
   { id: 4239147, name: 'svc-windows', ratio: 1.25, widths: [480, 860] },
   { id: 7193356, name: 'rest', ratio: 0.82, widths: [480, 860], position: 'bottom' },
 ]
+
+// before and after must share ratio and position so the halves line up
+const pairs = [
+  { name: 'ba-kitchen', before: 'ba-kitchen-before', after: 39338456 },
+  { name: 'ba-bathroom', before: 'ba-bathroom-before', after: 6890406, position: 'left' },
+  { name: 'ba-renovation', before: 'ba-renovation-before', after: 7031621 },
+]
+for (const p of pairs) {
+  for (const side of ['before', 'after']) {
+    photos.push({ id: p[side], name: `${p.name}-${side}`, ratio: 4 / 3, widths: [640, 1000, 1400], position: p.position })
+  }
+}
 
 const cutouts = [
   { id: 6312055, name: 'hero-chair', widths: [560, 900, 1300] },
