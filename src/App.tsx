@@ -1,5 +1,6 @@
 import { LazyMotion, MotionConfig, domAnimation } from 'motion/react'
 import { Advantages } from './components/Advantages'
+import { BeforeAfter } from './components/BeforeAfter'
 import { Contacts } from './components/Contacts'
 import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
@@ -26,6 +27,7 @@ export default function App() {
         <main id="main">
           <Hero />
           <Services />
+          <BeforeAfter />
           <Rest />
           <Advantages />
           <Steps />

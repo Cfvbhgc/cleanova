@@ -135,6 +135,50 @@ export const steps = [
 ]
 
 // Шаблоны карточек. Замените настоящими отзывами; пустой массив скрывает блок целиком.
+export const beforeAfterNote = 'Демонстрационные фото, заменяются на реальные работы'
+
+export const beforeAfter: {
+  id: string
+  tab: string
+  title: string
+  text: string
+  hours: string
+  image: string
+  beforeAlt: string
+  afterAlt: string
+}[] = [
+  {
+    id: 'kitchen',
+    tab: 'Кухня',
+    title: 'Кухня после пары недель готовки',
+    text: 'Отмыли столешницу и мойку, сняли брызги с плитки, известковый налёт с крана и жирные следы с чайника.',
+    hours: '2 часа',
+    image: 'ba-kitchen',
+    beforeAlt: 'Столешница с крошками и разводами, мойка в белых пятнах от воды',
+    afterAlt: 'Чистая серая столешница, мойка и чайник у кафельного фартука',
+  },
+  {
+    id: 'bathroom',
+    tab: 'Ванная',
+    title: 'Ванная с налётом на стекле',
+    text: 'Убрали известковый налёт с душевой перегородки и раковины, отполировали зеркало, отмыли столешницу и унитаз.',
+    hours: '2,5 часа',
+    image: 'ba-bathroom',
+    beforeAlt: 'Ванная с мутным стеклом душевой, пятнами на зеркале и налётом в раковине',
+    afterAlt: 'Светлая ванная с прозрачным стеклом душевой и чистой раковиной',
+  },
+  {
+    id: 'renovation',
+    tab: 'После ремонта',
+    title: 'Комната после ремонта',
+    text: 'Вынесли строительный мусор, дважды пропылесосили и вымыли пол, протёрли стены, плинтусы, батарею и окна.',
+    hours: '6 часов',
+    image: 'ba-renovation',
+    beforeAlt: 'Пустая комната с пылью, обрезками и следами обуви на тёмном полу',
+    afterAlt: 'Та же комната с чистым тёмным паркетом и прозрачным окном',
+  },
+]
+
 export const reviews: { name: string; detail: string; date: string; text: string; rating: number }[] = [
   {
     name: 'Имя клиента',
@@ -189,8 +233,13 @@ export const faq = [
 
 export const nav = [
   { href: '#uslugi', label: 'Услуги' },
+  { href: '#do-posle', label: 'До и после' },
   { href: '#kak', label: 'Как работаем' },
   { href: '#otzyvy', label: 'Отзывы' },
   { href: '#faq', label: 'Вопросы' },
   { href: '#kontakty', label: 'Контакты' },
 ]
+
+export const visibleNav = nav.filter(
+  (item) => !(item.href === '#otzyvy' && !reviews.length) && !(item.href === '#do-posle' && !beforeAfter.length),
+)

@@ -1,6 +1,4 @@
-import { company, nav as allNav, reviews } from '../content'
-
-const nav = reviews.length ? allNav : allNav.filter((item) => item.href !== '#otzyvy')
+import { company, visibleNav as nav } from '../content'
 import { Logo } from './Header'
 
 export function Footer() {
