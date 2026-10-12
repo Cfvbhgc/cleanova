@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, m } from 'motion/react'
 import { ListIcon, PhoneIcon, XIcon } from '@phosphor-icons/react'
-import { company, nav as allNav, reviews } from '../content'
-
-const nav = reviews.length ? allNav : allNav.filter((item) => item.href !== '#otzyvy')
+import { company, visibleNav as nav } from '../content'
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -45,7 +43,7 @@ export function Header() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="flex min-h-11 items-center rounded-full px-3.5 text-[15px] text-bark transition-colors hover:bg-paper/40"
+                  className="flex min-h-11 items-center rounded-full px-2.5 text-[15px] whitespace-nowrap text-bark transition-colors hover:bg-paper/40 xl:px-3.5"
                 >
                   {item.label}
                 </a>
@@ -56,7 +54,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={company.phoneHref}
-            className="tnum hidden min-h-11 items-center px-2 text-[15px] font-medium text-bark md:flex"
+            className="tnum hidden min-h-11 items-center px-2 text-[15px] font-medium whitespace-nowrap text-bark md:flex lg:hidden xl:flex"
           >
             {company.phone}
           </a>
